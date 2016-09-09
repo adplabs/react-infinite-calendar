@@ -64,6 +64,7 @@ export default class InfiniteCalendar extends Component {
 		maxDate: validDate,
 		locale: PropTypes.object,
 		theme: PropTypes.object,
+		weekdayFormat: PropTypes.string,
 		width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 		height: PropTypes.number,
 		rowHeight: PropTypes.number,
@@ -369,6 +370,7 @@ export default class InfiniteCalendar extends Component {
 			showTodayHelper,
 			showHeader,
 			tabIndex,
+			weekdayFormat,
 			width,
 			...other
 		} = this.props;
@@ -389,7 +391,7 @@ export default class InfiniteCalendar extends Component {
 					<Header selectedDate={selectedDate} shouldHeaderAnimate={shouldHeaderAnimate} layout={layout} theme={theme} locale={locale} scrollToDate={this.scrollToDate} setDisplay={this.setDisplay} display={display} />
 				}
 				<div className={style.container.wrapper}>
-					<Weekdays theme={theme} />
+					<Weekdays theme={theme} format={weekdayFormat} />
 					<div className={style.container.listWrapper}>
 						{showTodayHelper &&
 							<Today scrollToDate={this.scrollToDate} show={showToday} today={today} theme={theme} locale={locale} />
