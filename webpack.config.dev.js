@@ -23,7 +23,8 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
-		extensions: ['', '.js', '.jsx', '.scss']
+			root: path.resolve(__dirname, "node_modules"),
+			extensions: ['', '.js', '.jsx', '.scss']
     },
     module: {
         loaders: [
