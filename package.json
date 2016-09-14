@@ -47,7 +47,8 @@
     "clean:es6": "rimraf dist/es6",
     "clean:commonjs": "rimraf dist/commonjs",
     "test": "cross-env BABEL_ENV=testing karma start --single-run --browsers PhantomJS",
-    "codecov": "cat coverage/*/lcov.info | codecov"
+    "codecov": "cat coverage/*/lcov.info | codecov",
+    "postinstall": "./bin/postinstall"
   },
   "dependencies": {
     "classnames": "^2.1.2",
