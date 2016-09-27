@@ -48,6 +48,7 @@ export default class InfiniteCalendar extends Component {
 		keyboardSupport: true,
 		autoFocus: true,
 		shouldHeaderAnimate: true,
+		shouldScrollAfterSelect: true,
 		showOverlay: true,
 		showTodayHelper: true,
 		showHeader: true,
@@ -86,6 +87,7 @@ export default class InfiniteCalendar extends Component {
 		display: validDisplay,
 		hideYearsOnSelect: PropTypes.bool,
 		shouldHeaderAnimate: PropTypes.bool,
+		shouldScrollAfterSelect: PropTypes.bool,
 		showOverlay: PropTypes.bool,
 		showTodayHelper: PropTypes.bool,
 		showHeader: PropTypes.bool
@@ -100,7 +102,7 @@ export default class InfiniteCalendar extends Component {
 		}
 	}
 	componentWillReceiveProps(next) {
-		let {min, minDate, max, maxDate, locale, selectedDate} = this.props;
+		let {min, minDate, max, maxDate, locale, selectedDate, shouldScrollAfterSelect} = this.props;
 		let {display} = this.state;
 
 		if (next.locale !== locale) {
@@ -114,7 +116,7 @@ export default class InfiniteCalendar extends Component {
 			this.setState({
 				selectedDate: parsed
 			});
-			if(parsed) this.scrollToDate(parsed,-this.props.rowHeight*2);
+			if(shouldScrollAfterSelect && parsed) this.scrollToDate(parsed,-this.props.rowHeight*2);
 		} else if (next.minDate !== minDate || next.maxDate !== maxDate) {
 			// Need to make sure the currently selected date is not before the new minDate or after maxDate
 			let _selectedDate = this.parseSelectedDate(this.state.selectedDate);
