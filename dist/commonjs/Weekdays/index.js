@@ -65,9 +65,9 @@ var Weekdays = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _props = this.props;
-			var format = _props.format;
-			var theme = _props.theme;
+			var _props = this.props,
+			    format = _props.format,
+			    theme = _props.theme;
 
 			var textColor = theme.weekDay ? theme.weekDay.textColor : theme.textColor.active;
 

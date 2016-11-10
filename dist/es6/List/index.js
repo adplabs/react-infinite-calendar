@@ -39,10 +39,10 @@ var List = function (_Component) {
 			var index = _ref2.index;
 
 			if (!_this.monthHeights[index]) {
-				var _this$props = _this.props;
-				var locale = _this$props.locale;
-				var months = _this$props.months;
-				var rowHeight = _this$props.rowHeight;
+				var _this$props = _this.props,
+				    locale = _this$props.locale,
+				    months = _this$props.months,
+				    rowHeight = _this$props.rowHeight;
 
 				var date = months[index];
 				var weeks = getWeeksInMonth(date, locale);
@@ -57,9 +57,9 @@ var List = function (_Component) {
 
 			return index;
 		}, _this.getDateOffset = function (date) {
-			var _this$props2 = _this.props;
-			var min = _this$props2.min;
-			var rowHeight = _this$props2.rowHeight;
+			var _this$props2 = _this.props,
+			    min = _this$props2.min,
+			    rowHeight = _this$props2.rowHeight;
 
 			var weeks = date.clone().startOf('month').diff(min.date.clone().startOf('month'), 'weeks');
 
@@ -69,38 +69,36 @@ var List = function (_Component) {
 				return _this.scrollEl.scrollTop;
 			}
 		}, _this.scrollToDate = function (date) {
-			var offset = arguments.length <= 1 || arguments[1] === undefined ? 0 : arguments[1];
+			var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
 			var offsetTop = _this.getDateOffset(date);
 			_this.scrollTo(offsetTop + offset);
 		}, _this.scrollTo = function () {
-			var scrollTop = arguments.length <= 0 || arguments[0] === undefined ? 0 : arguments[0];
+			var scrollTop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
 
 			if (_this.scrollEl) {
 				_this.scrollEl.scrollTop = scrollTop;
 			}
 		}, _this.renderMonth = function (_ref3) {
-			var index = _ref3.index;
-			var isScrolling = _ref3.isScrolling;
-			var _this$props3 = _this.props;
-			var disabledDates = _this$props3.disabledDates;
-			var disabledDays = _this$props3.disabledDays;
-			var locale = _this$props3.locale;
-			var months = _this$props3.months;
-			var maxDate = _this$props3.maxDate;
-			var minDate = _this$props3.minDate;
-			var onDaySelect = _this$props3.onDaySelect;
-			var rowHeight = _this$props3.rowHeight;
-			var selectedDate = _this$props3.selectedDate;
-			var showOverlay = _this$props3.showOverlay;
-			var theme = _this$props3.theme;
-			var today = _this$props3.today;
+			var index = _ref3.index,
+			    isScrolling = _ref3.isScrolling;
+			var _this$props3 = _this.props,
+			    disabledDates = _this$props3.disabledDates,
+			    disabledDays = _this$props3.disabledDays,
+			    locale = _this$props3.locale,
+			    months = _this$props3.months,
+			    maxDate = _this$props3.maxDate,
+			    minDate = _this$props3.minDate,
+			    onDaySelect = _this$props3.onDaySelect,
+			    rowHeight = _this$props3.rowHeight,
+			    selectedDate = _this$props3.selectedDate,
+			    showOverlay = _this$props3.showOverlay,
+			    theme = _this$props3.theme,
+			    today = _this$props3.today;
 
-			var _this$memoize = _this.memoize(months[index]);
-
-			var date = _this$memoize.date;
-			var rows = _this$memoize.rows;
-
+			var _this$memoize = _this.memoize(months[index]),
+			    date = _this$memoize.date,
+			    rows = _this$memoize.rows;
 
 			return React.createElement(Month, {
 				key: 'Month-' + index,
@@ -133,16 +131,16 @@ var List = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _props = this.props;
-			var height = _props.height;
-			var isScrolling = _props.isScrolling;
-			var onScroll = _props.onScroll;
-			var overscanMonthCount = _props.overscanMonthCount;
-			var months = _props.months;
-			var rowHeight = _props.rowHeight;
-			var selectedDate = _props.selectedDate;
-			var today = _props.today;
-			var width = _props.width;
+			var _props = this.props,
+			    height = _props.height,
+			    isScrolling = _props.isScrolling,
+			    onScroll = _props.onScroll,
+			    overscanMonthCount = _props.overscanMonthCount,
+			    months = _props.months,
+			    rowHeight = _props.rowHeight,
+			    selectedDate = _props.selectedDate,
+			    today = _props.today,
+			    width = _props.width;
 
 			if (!this._initScrollTop) this._initScrollTop = this.getDateOffset(selectedDate && selectedDate.date || today.date);
 			if (typeof width == 'string' && width.indexOf('%') !== -1) {

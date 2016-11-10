@@ -25,18 +25,18 @@ var style = {
 };
 
 function Day(_ref) {
-	var currentYear = _ref.currentYear;
-	var date = _ref.date;
-	var day = _ref.day;
-	var handleDayClick = _ref.handleDayClick;
-	var isDisabled = _ref.isDisabled;
-	var isToday = _ref.isToday;
-	var isSelected = _ref.isSelected;
-	var monthShort = _ref.monthShort;
-	var locale = _ref.locale;
-	var theme = _ref.theme;
-	var mmt = date.date;
-	var yyyymmdd = date.yyyymmdd;
+	var currentYear = _ref.currentYear,
+	    date = _ref.date,
+	    day = _ref.day,
+	    handleDayClick = _ref.handleDayClick,
+	    isDisabled = _ref.isDisabled,
+	    isToday = _ref.isToday,
+	    isSelected = _ref.isSelected,
+	    monthShort = _ref.monthShort,
+	    locale = _ref.locale,
+	    theme = _ref.theme;
+	var mmt = date.date,
+	    yyyymmdd = date.yyyymmdd;
 
 	var year = mmt.year();
 
@@ -58,7 +58,7 @@ function Day(_ref) {
 			null,
 			day
 		),
-		day === 1 && currentYear !== year && _react2.default.createElement(
+		day === 1 && _react2.default.createElement(
 			'span',
 			{ className: style.year },
 			year

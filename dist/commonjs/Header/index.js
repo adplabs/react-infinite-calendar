@@ -82,15 +82,15 @@ var Header = function (_Component) {
 		value: function render() {
 			var _classNames;
 
-			var _props = this.props;
-			var display = _props.display;
-			var layout = _props.layout;
-			var locale = _props.locale;
-			var scrollToDate = _props.scrollToDate;
-			var selectedDate = _props.selectedDate;
-			var setDisplay = _props.setDisplay;
-			var shouldHeaderAnimate = _props.shouldHeaderAnimate;
-			var theme = _props.theme;
+			var _props = this.props,
+			    display = _props.display,
+			    layout = _props.layout,
+			    locale = _props.locale,
+			    scrollToDate = _props.scrollToDate,
+			    selectedDate = _props.selectedDate,
+			    setDisplay = _props.setDisplay,
+			    shouldHeaderAnimate = _props.shouldHeaderAnimate,
+			    theme = _props.theme;
 
 			var values = selectedDate && [{
 				item: 'year',
@@ -125,12 +125,12 @@ var Header = function (_Component) {
 					'div',
 					{ className: style.wrapper, 'aria-label': selectedDate.format(locale.headerFormat + ' YYYY') },
 					values.map(function (_ref) {
-						var handleClick = _ref.handleClick;
-						var item = _ref.item;
-						var key = _ref.key;
-						var value = _ref.value;
-						var active = _ref.active;
-						var title = _ref.title;
+						var handleClick = _ref.handleClick,
+						    item = _ref.item,
+						    key = _ref.key,
+						    value = _ref.value,
+						    active = _ref.active,
+						    title = _ref.title;
 
 						return _react2.default.createElement(
 							'div',

@@ -66,19 +66,19 @@ var Month = function (_Component) {
 	}, {
 		key: 'renderRows',
 		value: function renderRows() {
-			var _props = this.props;
-			var disabledDates = _props.disabledDates;
-			var disabledDays = _props.disabledDays;
-			var displayDate = _props.displayDate;
-			var locale = _props.locale;
-			var maxDate = _props.maxDate;
-			var minDate = _props.minDate;
-			var onDaySelect = _props.onDaySelect;
-			var rowHeight = _props.rowHeight;
-			var rows = _props.rows;
-			var selectedDate = _props.selectedDate;
-			var today = _props.today;
-			var theme = _props.theme;
+			var _props = this.props,
+			    disabledDates = _props.disabledDates,
+			    disabledDays = _props.disabledDays,
+			    displayDate = _props.displayDate,
+			    locale = _props.locale,
+			    maxDate = _props.maxDate,
+			    minDate = _props.minDate,
+			    onDaySelect = _props.onDaySelect,
+			    rowHeight = _props.rowHeight,
+			    rows = _props.rows,
+			    selectedDate = _props.selectedDate,
+			    today = _props.today,
+			    theme = _props.theme;
 
 			var currentYear = today.date.year();
 			var monthShort = displayDate.format('MMM');
@@ -130,12 +130,12 @@ var Month = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _props2 = this.props;
-			var displayDate = _props2.displayDate;
-			var today = _props2.today;
-			var rows = _props2.rows;
-			var showOverlay = _props2.showOverlay;
-			var theme = _props2.theme;
+			var _props2 = this.props,
+			    displayDate = _props2.displayDate,
+			    today = _props2.today,
+			    rows = _props2.rows,
+			    showOverlay = _props2.showOverlay,
+			    theme = _props2.theme;
 
 
 			return _react2.default.createElement(

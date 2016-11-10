@@ -43,11 +43,11 @@ var Years = function (_Component) {
     }, {
         key: 'handleClick',
         value: function handleClick(year, e) {
-            var _props = this.props;
-            var hideYearsOnSelect = _props.hideYearsOnSelect;
-            var scrollToDate = _props.scrollToDate;
-            var selectedDate = _props.selectedDate;
-            var setDisplay = _props.setDisplay;
+            var _props = this.props,
+                hideYearsOnSelect = _props.hideYearsOnSelect,
+                scrollToDate = _props.scrollToDate,
+                selectedDate = _props.selectedDate,
+                setDisplay = _props.setDisplay;
 
             var date = selectedDate || moment();
             var newDate = date.clone().year(year);
@@ -62,12 +62,12 @@ var Years = function (_Component) {
     }, {
         key: 'selectDate',
         value: function selectDate(date, e) {
-            var updateState = arguments.length <= 2 || arguments[2] === undefined ? true : arguments[2];
-            var shouldHeaderAnimate = arguments.length <= 3 || arguments[3] === undefined ? false : arguments[3];
-            var _props2 = this.props;
-            var minDate = _props2.minDate;
-            var maxDate = _props2.maxDate;
-            var onDaySelect = _props2.onDaySelect;
+            var updateState = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+            var shouldHeaderAnimate = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+            var _props2 = this.props,
+                minDate = _props2.minDate,
+                maxDate = _props2.maxDate,
+                onDaySelect = _props2.onDaySelect;
 
 
             if (!date.isBefore(minDate, 'day') && !date.isAfter(maxDate, 'day')) {
@@ -83,10 +83,10 @@ var Years = function (_Component) {
     }, {
         key: 'handleKeyDown',
         value: function handleKeyDown(e) {
-            var _props3 = this.props;
-            var scrollToDate = _props3.scrollToDate;
-            var setDisplay = _props3.setDisplay;
-            var selectedDate = _props3.selectedDate;
+            var _props3 = this.props,
+                scrollToDate = _props3.scrollToDate,
+                setDisplay = _props3.setDisplay,
+                selectedDate = _props3.selectedDate;
             var selectedYear = this.state.selectedYear;
 
             var delta = 0;
@@ -117,11 +117,11 @@ var Years = function (_Component) {
         value: function render() {
             var _this2 = this;
 
-            var _props4 = this.props;
-            var height = _props4.height;
-            var selectedDate = _props4.selectedDate;
-            var theme = _props4.theme;
-            var width = _props4.width;
+            var _props4 = this.props,
+                height = _props4.height,
+                selectedDate = _props4.selectedDate,
+                theme = _props4.theme,
+                width = _props4.width;
             var selectedYear = this.state.selectedYear;
 
             var currentYear = moment().year();

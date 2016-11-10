@@ -125,11 +125,11 @@ var InfiniteCalendar = function (_Component) {
 		var _this = (0, _possibleConstructorReturn3.default)(this, (InfiniteCalendar.__proto__ || (0, _getPrototypeOf2.default)(InfiniteCalendar)).call(this));
 
 		_this.onDaySelect = function (selectedDate, e) {
-			var shouldHeaderAnimate = arguments.length <= 2 || arguments[2] === undefined ? _this.props.shouldHeaderAnimate : arguments[2];
-			var _this$props = _this.props;
-			var afterSelect = _this$props.afterSelect;
-			var beforeSelect = _this$props.beforeSelect;
-			var onSelect = _this$props.onSelect;
+			var shouldHeaderAnimate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : _this.props.shouldHeaderAnimate;
+			var _this$props = _this.props,
+			    afterSelect = _this$props.afterSelect,
+			    beforeSelect = _this$props.beforeSelect,
+			    onSelect = _this$props.onSelect;
 
 
 			if (!beforeSelect || typeof beforeSelect == 'function' && beforeSelect(selectedDate)) {
@@ -163,7 +163,7 @@ var InfiniteCalendar = function (_Component) {
 		};
 
 		_this.scrollToDate = function () {
-			var date = arguments.length <= 0 || arguments[0] === undefined ? (0, _moment2.default)() : arguments[0];
+			var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : (0, _moment2.default)();
 			var offset = arguments[1];
 
 			return _this.list && _this.list.scrollToDate(date, offset);
@@ -173,10 +173,10 @@ var InfiniteCalendar = function (_Component) {
 
 		_this.onScroll = function (_ref) {
 			var scrollTop = _ref.scrollTop;
-			var _this$props2 = _this.props;
-			var onScroll = _this$props2.onScroll;
-			var showOverlay = _this$props2.showOverlay;
-			var showTodayHelper = _this$props2.showTodayHelper;
+			var _this$props2 = _this.props,
+			    onScroll = _this$props2.onScroll,
+			    showOverlay = _this$props2.showOverlay,
+			    showTodayHelper = _this$props2.showTodayHelper;
 			var isScrolling = _this.state.isScrolling;
 
 			var scrollSpeed = _this.scrollSpeed = Math.abs(_this.getScrollSpeed(scrollTop));
@@ -199,9 +199,9 @@ var InfiniteCalendar = function (_Component) {
 		};
 
 		_this.onScrollEnd = (0, _debounce2.default)(function () {
-			var _this$props3 = _this.props;
-			var onScrollEnd = _this$props3.onScrollEnd;
-			var showTodayHelper = _this$props3.showTodayHelper;
+			var _this$props3 = _this.props,
+			    onScrollEnd = _this$props3.onScrollEnd,
+			    showTodayHelper = _this$props3.showTodayHelper;
 			var isScrolling = _this.state.isScrolling;
 
 
@@ -216,10 +216,10 @@ var InfiniteCalendar = function (_Component) {
 
 			var scrollTop = _this.scrollTop;
 			var showToday = _this.state.showToday;
-			var _this$props4 = _this.props;
-			var height = _this$props4.height;
-			var rowHeight = _this$props4.rowHeight;
-			var todayHelperRowOffset = _this$props4.todayHelperRowOffset;
+			var _this$props4 = _this.props,
+			    height = _this$props4.height,
+			    rowHeight = _this$props4.rowHeight,
+			    todayHelperRowOffset = _this$props4.todayHelperRowOffset;
 
 			var newState = void 0;
 			var dayOffset = Math.ceil((date.date() - 7 + (0, _moment2.default)(date).startOf("month").day()) / 7) * rowHeight; //offset of "today" within its month
@@ -242,15 +242,15 @@ var InfiniteCalendar = function (_Component) {
 		};
 
 		_this.handleKeyDown = function (e) {
-			var _this$props5 = _this.props;
-			var maxDate = _this$props5.maxDate;
-			var minDate = _this$props5.minDate;
-			var onKeyDown = _this$props5.onKeyDown;
-			var _this$state = _this.state;
-			var display = _this$state.display;
-			var selectedDate = _this$state.selectedDate;
-			var highlightedDate = _this$state.highlightedDate;
-			var showToday = _this$state.showToday;
+			var _this$props5 = _this.props,
+			    maxDate = _this$props5.maxDate,
+			    minDate = _this$props5.minDate,
+			    onKeyDown = _this$props5.onKeyDown;
+			var _this$state = _this.state,
+			    display = _this$state.display,
+			    selectedDate = _this$state.selectedDate,
+			    highlightedDate = _this$state.highlightedDate,
+			    showToday = _this$state.showToday;
 
 			var delta = 0;
 
@@ -356,9 +356,9 @@ var InfiniteCalendar = function (_Component) {
 	(0, _createClass3.default)(InfiniteCalendar, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			var _props = this.props;
-			var autoFocus = _props.autoFocus;
-			var keyboardSupport = _props.keyboardSupport;
+			var _props = this.props,
+			    autoFocus = _props.autoFocus,
+			    keyboardSupport = _props.keyboardSupport;
 
 			this.node = this.refs.node;
 			this.list = this.refs.List;
@@ -370,14 +370,14 @@ var InfiniteCalendar = function (_Component) {
 	}, {
 		key: 'componentWillReceiveProps',
 		value: function componentWillReceiveProps(next) {
-			var _props2 = this.props;
-			var min = _props2.min;
-			var minDate = _props2.minDate;
-			var max = _props2.max;
-			var maxDate = _props2.maxDate;
-			var locale = _props2.locale;
-			var selectedDate = _props2.selectedDate;
-			var shouldScrollAfterSelect = _props2.shouldScrollAfterSelect;
+			var _props2 = this.props,
+			    min = _props2.min,
+			    minDate = _props2.minDate,
+			    max = _props2.max,
+			    maxDate = _props2.maxDate,
+			    locale = _props2.locale,
+			    selectedDate = _props2.selectedDate,
+			    shouldScrollAfterSelect = _props2.shouldScrollAfterSelect;
 			var display = this.state.display;
 
 
@@ -427,7 +427,7 @@ var InfiniteCalendar = function (_Component) {
 	}, {
 		key: 'updateYears',
 		value: function updateYears() {
-			var props = arguments.length <= 0 || arguments[0] === undefined ? this.props : arguments[0];
+			var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.props;
 
 			var min = this._min = (0, _moment2.default)(props.min);
 			var max = this._max = (0, _moment2.default)(props.max);
@@ -456,14 +456,14 @@ var InfiniteCalendar = function (_Component) {
 	}, {
 		key: 'getLocale',
 		value: function getLocale() {
-			var customLocale = arguments.length <= 0 || arguments[0] === undefined ? this.props.locale : arguments[0];
+			var customLocale = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.props.locale;
 
 			return (0, _assign2.default)({}, _locale2.default, customLocale);
 		}
 	}, {
 		key: 'getTheme',
 		value: function getTheme() {
-			var customTheme = arguments.length <= 0 || arguments[0] === undefined ? this.props.theme : arguments[0];
+			var customTheme = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.props.theme;
 
 			return (0, _assign2.default)({}, _theme2.default, customTheme);
 		}
@@ -478,34 +478,34 @@ var InfiniteCalendar = function (_Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _props3 = this.props;
-			var className = _props3.className;
-			var disabledDays = _props3.disabledDays;
-			var height = _props3.height;
-			var hideYearsOnSelect = _props3.hideYearsOnSelect;
-			var keyboardSupport = _props3.keyboardSupport;
-			var layout = _props3.layout;
-			var overscanMonthCount = _props3.overscanMonthCount;
-			var min = _props3.min;
-			var minDate = _props3.minDate;
-			var max = _props3.max;
-			var maxDate = _props3.maxDate;
-			var showTodayHelper = _props3.showTodayHelper;
-			var showHeader = _props3.showHeader;
-			var tabIndex = _props3.tabIndex;
-			var weekdayFormat = _props3.weekdayFormat;
-			var width = _props3.width;
-			var other = (0, _objectWithoutProperties3.default)(_props3, ['className', 'disabledDays', 'height', 'hideYearsOnSelect', 'keyboardSupport', 'layout', 'overscanMonthCount', 'min', 'minDate', 'max', 'maxDate', 'showTodayHelper', 'showHeader', 'tabIndex', 'weekdayFormat', 'width']);
+			var _props3 = this.props,
+			    className = _props3.className,
+			    disabledDays = _props3.disabledDays,
+			    height = _props3.height,
+			    hideYearsOnSelect = _props3.hideYearsOnSelect,
+			    keyboardSupport = _props3.keyboardSupport,
+			    layout = _props3.layout,
+			    overscanMonthCount = _props3.overscanMonthCount,
+			    min = _props3.min,
+			    minDate = _props3.minDate,
+			    max = _props3.max,
+			    maxDate = _props3.maxDate,
+			    showTodayHelper = _props3.showTodayHelper,
+			    showHeader = _props3.showHeader,
+			    tabIndex = _props3.tabIndex,
+			    weekdayFormat = _props3.weekdayFormat,
+			    width = _props3.width,
+			    other = (0, _objectWithoutProperties3.default)(_props3, ['className', 'disabledDays', 'height', 'hideYearsOnSelect', 'keyboardSupport', 'layout', 'overscanMonthCount', 'min', 'minDate', 'max', 'maxDate', 'showTodayHelper', 'showHeader', 'tabIndex', 'weekdayFormat', 'width']);
 
 			var disabledDates = this.getDisabledDates(this.props.disabledDates);
 			var locale = this.getLocale();
 			var theme = this.getTheme();
-			var _state = this.state;
-			var display = _state.display;
-			var isScrolling = _state.isScrolling;
-			var selectedDate = _state.selectedDate;
-			var showToday = _state.showToday;
-			var shouldHeaderAnimate = _state.shouldHeaderAnimate;
+			var _state = this.state,
+			    display = _state.display,
+			    isScrolling = _state.isScrolling,
+			    selectedDate = _state.selectedDate,
+			    showToday = _state.showToday,
+			    shouldHeaderAnimate = _state.shouldHeaderAnimate;
 
 			var today = this.today = (0, _utils.parseDate)((0, _moment2.default)());
 

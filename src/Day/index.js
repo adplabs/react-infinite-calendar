@@ -14,7 +14,7 @@ export default function Day({currentYear, date, day, handleDayClick, isDisabled,
 		>
 			{(day === 1) && <span className={style.month}>{monthShort}</span>}
 			<span>{day}</span>
-			{(day === 1 && currentYear !== year) && <span className={style.year}>{year}</span>}
+			{(day === 1) && <span className={style.year}>{year}</span>}
 			{isSelected &&
 				<div className={style.selection} style={{backgroundColor: (typeof theme.selectionColor == 'function') ? theme.selectionColor(mmt) : theme.selectionColor, color: theme.textColor.active}}>
 					<span className={style.month}>{(isToday) ? (locale.todayLabel.short || locale.todayLabel.long) : monthShort}</span>

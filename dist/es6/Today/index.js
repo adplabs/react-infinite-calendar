@@ -40,10 +40,10 @@ var Today = function (_Component) {
 	_createClass(Today, [{
 		key: 'shouldComponentUpdate',
 		value: function shouldComponentUpdate(nextProps) {
-			var _props = this.props;
-			var locale = _props.locale;
-			var show = _props.show;
-			var theme = _props.theme;
+			var _props = this.props,
+			    locale = _props.locale,
+			    show = _props.show,
+			    theme = _props.theme;
 
 			return nextProps.locale !== locale || nextProps.show !== show || nextProps.theme !== theme;
 		}
@@ -52,10 +52,10 @@ var Today = function (_Component) {
 		value: function render() {
 			var _classNames;
 
-			var _props2 = this.props;
-			var locale = _props2.locale;
-			var show = _props2.show;
-			var theme = _props2.theme;
+			var _props2 = this.props,
+			    locale = _props2.locale,
+			    show = _props2.show,
+			    theme = _props2.theme;
 
 			return React.createElement(
 				'div',
