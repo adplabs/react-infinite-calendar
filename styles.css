@@ -239,6 +239,9 @@
 .Cal__Day__month {
   top: 5px; }
 
+.Cal__Day__day {
+  position: relative; }
+
 .Cal__Day__year {
   bottom: 5px; }
 .Cal__Month__root {

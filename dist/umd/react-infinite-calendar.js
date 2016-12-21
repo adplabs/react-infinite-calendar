@@ -26719,7 +26719,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			),
 			_react2.default.createElement(
 				'span',
-				null,
+				{ className: style.day },
 				day
 			),
 			day === 1 && _react2.default.createElement(

@@ -43,7 +43,7 @@ export default function Day(_ref) {
 		),
 		React.createElement(
 			'span',
-			null,
+			{ className: style.day },
 			day
 		),
 		day === 1 && React.createElement(
